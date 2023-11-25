@@ -1,14 +1,15 @@
 <script setup>
 import Column from './components/Column.vue'
-// import JsxExample from './components/JsxExample.vue'
 import Table from './components/Table.vue'
-import CustomColumn from './components/CustomColumn.vue'
+
 const items = [
     {
-        name: 'item1name',
+        name: 'Андрей',
+        surname:'Фролов'
     },
     {
-        name: 'item2name',
+        name: 'Алексей',
+        surname:'Орлов'
     },
 ]
 </script>
@@ -16,17 +17,17 @@ const items = [
 <template>
     <div>
         <Table :items="items">
-            <Column label="column1">
+            <Column label="Имя">
                 <template #default="scope">
                     <div>
                         {{ scope.name }}
                     </div>
                 </template>
             </Column>
-            <Column label="column2">
+            <Column label="Фамилия">
                 <template #default="scope">
                     <div>
-                        {{ scope.name }}
+                        {{ scope.surname }}
                     </div>
                 </template>
             </Column>

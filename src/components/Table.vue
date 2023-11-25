@@ -10,33 +10,36 @@ export default {
         return h('div', {}, [
             this.$slots.default(),
             h('table', [
-                h('tr', [
-                    ...this.columnsData.map(
-                        (c) =>
-                            h(
-                                'th',
-                                `${c.label}`
-                            )
-                    ),
-                ]),
-                ...this.$attrs.items.map((i) =>
+                h(
+                    'thead',
                     h('tr', [
                         ...this.columnsData.map(
                             (c) =>
                                 h(
-                                    'td',
-                                    {
-                                        key: c.label,
-                                    },
-                                    c.createCell(
-                                        i
-                                    )
+                                    'th',
+                                    `${c.label}`
                                 )
                         ),
                     ])
                 ),
+                ...this.$attrs.items.map(
+                    (i) =>
+                        h('tr', [
+                            ...this.columnsData.map(
+                                (c) =>
+                                    h(
+                                        'td',
+                                        {
+                                            key: c.label,
+                                        },
+                                        c.createCell(
+                                            i
+                                        )
+                                    )
+                            ),
+                        ])
+                ),
             ]),
-
         ])
     },
     data() {

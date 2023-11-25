@@ -1,4 +1,4 @@
-<script lang="jsx">
+<script >
 import { defineComponent, h } from 'vue'
 export default defineComponent({
 
