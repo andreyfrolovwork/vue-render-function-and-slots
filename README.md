@@ -1,7 +1,25 @@
-# Vue 3 + Vite
-
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+# Пишем свой табличку с помощью рендер функий vue
+Передача компонента в default slot и кастомный рендер ячейки таблицы
+```vue
+<template>
+    <div>
+        <Table :items="items">
+            <Column label="Имя">
+                <template #default="scope">
+                    <div>
+                        {{ scope.name }}
+                    </div>
+                </template>
+            </Column>
+            <Column label="Фамилия">
+                <template #default="scope">
+                    <div>
+                        {{ scope.surname }}
+                    </div>
+                </template>
+            </Column>
+        </Table>
+    </div>
+</template>
+```
+![chrome_i6DwmpSYlg](https://github.com/iobox420/vue-render-function-and-slots/assets/67315235/d82b345d-3816-48ea-a59a-339f7c977f04)
