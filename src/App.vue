@@ -1,17 +1,18 @@
 <script setup>
 import Column from './components/Column.vue'
 import Table from './components/Table.vue'
+import { ref } from 'vue'
 
-const items = [
+const items = ref([
     {
         name: 'Андрей',
-        surname:'Фролов'
+        surname: 'Фролов',
     },
     {
         name: 'Алексей',
-        surname:'Орлов'
+        surname: 'Орлов',
     },
-]
+])
 </script>
 
 <template>
@@ -34,37 +35,3 @@ const items = [
         </Table>
     </div>
 </template>
-
-<style>
-/* Общие стили для таблицы */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-/* Стили для заголовка таблицы */
-th {
-    background-color: #3498db; /* Цвет заголовка */
-    color: #fff; /* Цвет текста в заголовке */
-    padding: 10px;
-}
-
-/* Стили для четных строк таблицы */
-tr:nth-child(even) {
-    background-color: #f2f2f2; /* Однотонный фон четных строк */
-}
-
-/* Стили для нечетных строк таблицы */
-tr:nth-child(odd) {
-    background-color: #e5e5e5; /* Однотонный фон нечетных строк */
-}
-
-/* Общие стили для ячеек таблицы */
-td,
-th {
-    border: 1px solid #ddd; /* Рамка вокруг ячеек и заголовков */
-    padding: 8px;
-    text-align: left;
-}
-</style>

@@ -1,9 +1,7 @@
-<script >
+<script>
 import { defineComponent, h } from 'vue'
 export default defineComponent({
-
     render() {
-        console.log('🔥🔥🔥 columns this', this)
         return null
     },
     mounted() {

@@ -3,10 +3,7 @@ import { h } from 'vue'
 
 export default {
     render(...args) {
-        console.log('table this', this)
         const items = this.$attrs.items
-        console.log('items', items)
-        console.log('table args', args)
         return h('div', {}, [
             this.$slots.default(),
             h('table', [
