@@ -1,5 +1,4 @@
-/*import copy from '../src/utils/copy.js'*/
-const copy = require('../src/utils/copy.js')
+import copy from '../src/utils/copy.js'
 
 describe('функция copy', () => {
     it('должна копировать простые свойства', () => {
@@ -31,12 +30,12 @@ describe('функция copy', () => {
         expect(source).toEqual({ a: { b: { c: 1 } } })
     })
     it('должна глубоко копировать массивы', () => {
-        const source = { a: { b: { c: [1, 2, 3] } } }
+        const source = { a: { b: { c: [1, { f: 'v' }, 2, 3] } } }
         const result = copy(source, ['a.b.c'])
 
         source.a.b.c.push(4)
 
-        expect(result).toEqual({ a: { b: { c: [1, 2, 3] } } })
+        expect(result).toEqual({ a: { b: { c: [1, { f: 'v' }, 2, 3] } } })
     })
 
     it('должна глубоко копировать объекты внутри массивов', () => {

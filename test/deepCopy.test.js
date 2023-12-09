@@ -1,5 +1,4 @@
-const { deepCopy } = require('../src/utils/copy.js') // Подставьте свой путь к файлу с функцией deepCopy
-
+import { deepCopy } from '../src/utils/copy.js'
 describe('deepCopy', () => {
     it('должна создавать глубокую копию объекта без ссылок', () => {
         const originalObject = {
@@ -8,9 +7,7 @@ describe('deepCopy', () => {
             bio: 'Frontend разработчик',
             experience: 'Более 3 лет',
         }
-
         const copiedObject = deepCopy(originalObject)
-
         expect(copiedObject).toEqual(originalObject)
         expect(copiedObject).not.toBe(originalObject)
     })
