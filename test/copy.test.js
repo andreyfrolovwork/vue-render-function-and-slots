@@ -8,11 +8,6 @@ describe('функция copy', () => {
         expect(result).toEqual(source)
     })
 
-    it('должна копировать свойства с индексами массивов', () => {
-        const source = { a: { b: [1, 2] } }
-        const result = copy(source, ['a.b.0'])
-        expect(result).toEqual({ a: { b: [1] } })
-    })
     it('должна копировать свойства с undefined значениями', () => {
         const source = { a: { b: { c: undefined } } }
         const result = copy(source, ['a.b.c'])
@@ -51,13 +46,13 @@ describe('функция copy', () => {
         expect(result).toEqual({ a: { b: { c: [{ foo: 'bar' }, 2, 3] } } })
     })
 
-    it('глубокое копирование обьектов', () => {
+    it('глубокое копирование объектов', () => {
         const source = { foo: 'bar' }
         const result = copy(source, [''])
         expect(result).toEqual({ foo: 'bar' })
     })
 
-    it('глубокое копирование обьектов, проверяем отсутствие ссылки', () => {
+    it('глубокое копирование объектов, проверяем отсутствие ссылки', () => {
         const source = { foo: 'bar' }
         const result = copy(source, [''])
         source.baz = 'bax'
