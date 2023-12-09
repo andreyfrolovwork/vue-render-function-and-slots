@@ -2,7 +2,7 @@
 import Column from './components/Column.vue'
 import Table from './components/Table.vue'
 import { ref } from 'vue'
-
+import copy from './utils/copy.js'
 const items = ref([
     {
         name: 'Андрей',
@@ -13,6 +13,8 @@ const items = ref([
         surname: 'Орлов',
     },
 ])
+
+/* Задача № 1  */
 </script>
 
 <template>
@@ -27,9 +29,9 @@ const items = ref([
             </Column>
             <Column label="Фамилия">
                 <template #default="scope">
-                    <div>
+                    <b>
                         {{ scope.surname }}
-                    </div>
+                    </b>
                 </template>
             </Column>
         </Table>
