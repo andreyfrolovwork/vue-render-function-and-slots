@@ -2,7 +2,6 @@
 import Column from './components/Column.vue'
 import Table from './components/Table.vue'
 import { ref } from 'vue'
-import copy from './utils/copy.js'
 const items = ref([
     {
         name: 'Андрей',

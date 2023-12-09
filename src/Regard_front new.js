@@ -45,14 +45,14 @@ RTable
 Т.е. пример
 */
 
-booleanToInt('qwerty') // 'qwerty'
-booleanToInt(1) // 1
-booleanToInt(false) // 0
-booleanToInt(true) // 1
-booleanToInt([1, 'qwerty', false]) // [1, 'qwerty', 0]
-booleanToInt([1, 'qwerty', { a: true }]) // [1, 'qwerty', { a: 1 }]
-booleanToInt({ a: { b: true }, c: false, d: 'qwerty' }) // { a: { b: 1 }, c: 0, d: 'qwerty' }
-booleanToInt({
+booleanToIntTest('qwerty') // 'qwerty'
+booleanToIntTest(1) // 1
+booleanToIntTest(false) // 0
+booleanToIntTest(true) // 1
+booleanToIntTest([1, 'qwerty', false]) // [1, 'qwerty', 0]
+booleanToIntTest([1, 'qwerty', { a: true }]) // [1, 'qwerty', { a: 1 }]
+booleanToIntTest({ a: { b: true }, c: false, d: 'qwerty' }) // { a: { b: 1 }, c: 0, d: 'qwerty' }
+booleanToIntTest({
   date1: {
     date1_1: 1,
     date1_2: [

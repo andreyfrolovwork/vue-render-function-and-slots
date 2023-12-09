@@ -45,13 +45,13 @@ describe('функция copy', () => {
         expect(result).toEqual({ a: { b: { c: [{ foo: 'bar' }, 2, 3] } } })
     })
 
-    it('глубокое копирование объектов', () => {
+    it('передача пустой строки в качестве аргумента', () => {
         const source = { foo: 'bar' }
         const result = copy(source, [''])
         expect(result).toEqual({ foo: 'bar' })
     })
 
-    it('глубокое копирование объектов, проверяем отсутствие ссылки', () => {
+    it('передача пустой строки в качестве аргумента и копирование не по ссылке', () => {
         const source = { foo: 'bar' }
         const result = copy(source, [''])
         source.baz = 'bax'

@@ -1,5 +1,6 @@
 <script>
-import { defineComponent, h } from 'vue'
+import { defineComponent } from 'vue'
+
 export default defineComponent({
     render() {
         return null
