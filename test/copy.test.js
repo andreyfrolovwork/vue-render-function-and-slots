@@ -57,11 +57,10 @@ describe('функция copy', () => {
         expect(result).toEqual({ foo: 'bar' })
     })
 
-    it('глубокое копирование обьектов', () => {
-        const source = [1, { foo: 'bar' }]
+    it('глубокое копирование обьектов, проверяем отсутствие ссылки', () => {
+        const source = { foo: 'bar' }
         const result = copy(source, [''])
-        source.push(2)
-
-        expect(result).toEqual([1, { foo: 'bar' }])
+        source.baz = 'bax'
+        expect(result).toEqual({ foo: 'bar' })
     })
 })
