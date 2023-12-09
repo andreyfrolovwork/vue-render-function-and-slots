@@ -3,19 +3,15 @@ export function deepCopy(obj, originalReferences = new WeakMap(), copiedReferenc
         return obj;
     }
 
-    // Проверяем, был ли этот объект скопирован ранее
     if (copiedReferences.has(obj)) {
         return copiedReferences.get(obj);
     }
 
-    // Создаем новый объект или массив в зависимости от типа obj
     const copy = Array.isArray(obj) ? [] : {};
 
-    // Регистрируем оригинальный объект и его копию в WeakMap
     originalReferences.set(copy, obj);
     copiedReferences.set(obj, copy);
 
-    // Рекурсивно копируем свойства или элементы
     for (const key in obj) {
         if (obj.hasOwnProperty(key)) {
             copy[key] = deepCopy(obj[key], originalReferences, copiedReferences);
